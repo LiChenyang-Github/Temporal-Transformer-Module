@@ -5,20 +5,22 @@ The tensorflow implementation of Temporal Transformer Module (TTM), which is pro
 
 ## Example 
 
-    import ttm
-    import tensorflow as tf
+```python
+import ttm
+import tensorflow as tf
 
 
-    batchsize = 56
-    final_frame_nb = 39
-    dim = 702   # Refer to the comment in ttm.py
+batchsize = 56
+final_frame_nb = 39
+dim = 702   # Refer to the comment in ttm.py
 
 
-    X = tf.Variable(tf.random_normal([batchsize, dim]), name="input")   # X is the raw coordinates, each row is a sample in order of [joint, axis(xyz), frame].
+X = tf.Variable(tf.random_normal([batchsize, dim]), name="input")   # X is the raw coordinates, each row is a sample in order of [joint, axis(xyz), frame].
 
-    theta = localization_net(X) # localization_net() is a network of any form (fully connected layer, 1D convolutional layer, etc.), but should finally regress to 2 neurons.  
+theta = localization_net(X) # localization_net() is a network of any form (fully connected layer, 1D convolutional layer, etc.), but should finally regress to 2 neurons.  
 
-    X = temporal_transformer_network_2paras(X, final_frame_nb, theta)
+X = temporal_transformer_network_2paras(X, final_frame_nb, theta)
+```
 
 ## Citation     
 
