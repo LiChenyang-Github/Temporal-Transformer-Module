@@ -19,7 +19,7 @@ X = tf.Variable(tf.random_normal([batchsize, dim]), name="input")   # X is the r
 
 theta = localization_net(X) # localization_net() is a network of any form (fully connected layer, 1D convolutional layer, etc.), but should finally regress to 2 neurons.  
 
-X = temporal_transformer_network_2paras(X, final_frame_nb, theta)
+X = ttm.temporal_transformer_network_2paras(X, final_frame_nb, theta)
 ```
 
 ## Citation     
