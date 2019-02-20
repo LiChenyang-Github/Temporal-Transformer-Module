@@ -51,7 +51,7 @@ def affine_grid_generator_2paras(C, final_frame_nb, theta):
 
     batch_grids = tf.matmul(theta, sampling_grid)   # the shape of batch_grids here is [B, 1, C]
 
-    batch_grids = tf.reshape(batch_grids, [B, N, final_frame_nb])   # the shape of batch_grids here is [B, N, C]
+    batch_grids = tf.reshape(batch_grids, [B, N, final_frame_nb])   # the shape of batch_grids here is [B, N, final_frame_nb]
 
     return batch_grids
     
